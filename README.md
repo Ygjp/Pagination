@@ -11,6 +11,14 @@ def user_list(request):
 ```
 ### 1、获取需要分页的queryset( models.*.object.filter(...)/all() )
 ### 2、传参
+```
+1、
+获取成员属性queryset
+这是处理好的分好页的数据
+2、
+调用成员方法html()
+这是处理好的分页页码
+```
 ### 3、调用html方法获取页码的相关html
 ```
 def user_list(request):<br>
@@ -18,7 +26,10 @@ def user_list(request):<br>
     userinfo = models.UserInfo.objects.all()
     # 传参
     page_object = Pagination(request,userinfo)
+    # 调用成员方法html()
+    # 这是处理好的分页页码
     page_string = page_object.html()
+    # 获取成员属性queryset 这是处理好的分好页的数据 page_object.queryset 
     return render(request, "user_list.html", {"queryset": page_object.queryset,"page_string":page_string})
 ```
 Pagination中有多个参数：<br>
@@ -47,6 +58,8 @@ eg:<br>
 ### 最终效果
 
 ![Snipaste_2025-08-05_19-51-51](https://github.com/user-attachments/assets/8ecccb3c-6e0a-46e8-8cac-6818af664d87)
+
+
 
 ## **ps：点击和输入页码跳转时会自动携带GET参数，无需另外处理**
         
