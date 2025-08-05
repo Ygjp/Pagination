@@ -44,7 +44,9 @@ eg:<br>
     {{ page_string }}
 </ul>
 ```
+### 最终效果
 
+![Snipaste_2025-08-05_19-51-51](https://github.com/user-attachments/assets/8ecccb3c-6e0a-46e8-8cac-6818af664d87)
 
 ## **ps：点击和输入页码跳转时会自动携带GET参数，无需另外处理**
         
